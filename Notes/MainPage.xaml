@@ -47,24 +47,26 @@
         </Frame>
 
         <Label Text="All Notes" FontSize="20" FontAttributes="Bold"/>
+
         <ListView ItemsSource="{Binding Notes}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ViewCell.View>
-                            <SwipeView>
-                                <SwipeView.RightItems>
-                                    <SwipeItems>
-                                        <SwipeItem Text="Delete"
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Delete"
                                                    BackgroundColor="Red"
                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainPageViewModel}}, Path=DeleteNote}"
                                                    CommandParameter="{Binding}"
                                                   />
-                                    </SwipeItems>
-                                </SwipeView.RightItems>
-                                <Label Text="{Binding Content}" />
-                            </SwipeView>
-                        </ViewCell.View>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Content, StringFormat='https://picsum.photos/seed/\{0\}/400'}" VerticalOptions="Center" Margin="0, 5, 0, 5"/>
+                                <Label Text="{Binding Content}" VerticalOptions="Center" />
+                            </StackLayout>
+                        </SwipeView>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
