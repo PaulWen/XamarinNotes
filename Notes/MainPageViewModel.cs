@@ -18,12 +18,6 @@ namespace Notes
             Notes.Add(new Note("Test2"));
             Notes.Add(new Note("Test3"));
             Notes.Add(new Note("Test3"));
-            Notes.Add(new Note("Test3"));
-            Notes.Add(new Note("Test3"));
-            Notes.Add(new Note("Test3"));
-            Notes.Add(new Note("Test3"));
-            Notes.Add(new Note("Test3"));
-            Notes.Add(new Note("Test3"));
 
         }
 
