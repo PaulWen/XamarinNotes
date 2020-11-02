@@ -17,6 +17,7 @@ namespace Notes
             {
                 _newNotes = value;
                 AddNote.ChangeCanExecute();
+                DiscardNote.ChangeCanExecute();
             }
         }
 
@@ -30,7 +31,8 @@ namespace Notes
 
         public MainPageViewModel()
         {
-            AddNote = new Command(AddNewNote, CanAddNewNote);
+            AddNote = new Command(AddNewNote, HasNewNote);
+            DiscardNote = new Command(DiscardNewNote, HasNewNote);
 
             NewNote = "";
             Notes = new ObservableCollection<Note>();
@@ -57,9 +59,16 @@ namespace Notes
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NewNote"));
         }
 
-        private bool CanAddNewNote()
+        private void DiscardNewNote()
+        {
+            NewNote = "";
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NewNote"));
+        }
+
+        private bool HasNewNote()
         {
             return !string.IsNullOrWhiteSpace(NewNote);
         }
+
     }
 }
