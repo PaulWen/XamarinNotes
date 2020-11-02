@@ -16,7 +16,7 @@ namespace Notes
             set
             {
                 _newNotes = value;
-                AddNote.ChangeCanExecute();
+                AddNewNote.ChangeCanExecute();
             }
         }
 
@@ -24,18 +24,19 @@ namespace Notes
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Command AddNote { protected set; get; }
-        public Command DiscardNote { protected set; get; }
+        public Command AddNewNote { protected set; get; }
+        public Command DiscardNewNote { protected set; get; }
+        public Command<Note> DeleteNote { protected set; get; }
 
 
         public MainPageViewModel()
         {
-            AddNote = new Command(AddNewNote, HasNewNote);
-            DiscardNote = new Command(DiscardNewNote);
+            AddNewNote = new Command(OnAddNewNote, HasNewNote);
+            DiscardNewNote = new Command(OnDiscardNewNote);
+            DeleteNote = new Command<Note>(OnDeleteNote);
 
             NewNote = "";
             Notes = new ObservableCollection<Note>();
-
 
             Notes.Add(new Note("Test"));
             Notes.Add(new Note("Test1"));
@@ -51,15 +52,9 @@ namespace Notes
         }
 
 
-        private void AddNewNote()
+        private void OnAddNewNote()
         {
             Notes.Add(new Note(NewNote.Trim()));
-            NewNote = "";
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NewNote"));
-        }
-
-        private void DiscardNewNote()
-        {
             NewNote = "";
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NewNote"));
         }
@@ -67,6 +62,17 @@ namespace Notes
         private bool HasNewNote()
         {
             return !string.IsNullOrWhiteSpace(NewNote);
+        }
+
+        private void OnDiscardNewNote()
+        {
+            NewNote = "";
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NewNote"));
+        }
+
+        private void OnDeleteNote(Note note)
+        {
+            Notes.Remove(note);
         }
 
     }
