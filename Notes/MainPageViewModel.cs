@@ -17,7 +17,6 @@ namespace Notes
             {
                 _newNotes = value;
                 AddNote.ChangeCanExecute();
-                DiscardNote.ChangeCanExecute();
             }
         }
 
@@ -32,7 +31,7 @@ namespace Notes
         public MainPageViewModel()
         {
             AddNote = new Command(AddNewNote, HasNewNote);
-            DiscardNote = new Command(DiscardNewNote, HasNewNote);
+            DiscardNote = new Command(DiscardNewNote);
 
             NewNote = "";
             Notes = new ObservableCollection<Note>();
