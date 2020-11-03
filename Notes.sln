@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Android", "Notes.Andr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.iOS", "Notes.iOS\Notes.iOS.csproj", "{6B1129A7-5BA6-4237-B209-FD8EB8065B12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.UITests", "Notes.UITests\Notes.UITests.csproj", "{54661B8F-BE12-44F5-9CDB-DB35E1E46852}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes", "Notes\Notes.csproj", "{48B59954-18CF-4C33-9DB2-4825B073B4ED}"
 EndProject
 Global
@@ -43,18 +41,6 @@ Global
 		{6B1129A7-5BA6-4237-B209-FD8EB8065B12}.Debug|iPhone.Build.0 = Debug|iPhone
 		{6B1129A7-5BA6-4237-B209-FD8EB8065B12}.Release|iPhone.ActiveCfg = Release|iPhone
 		{6B1129A7-5BA6-4237-B209-FD8EB8065B12}.Release|iPhone.Build.0 = Release|iPhone
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{54661B8F-BE12-44F5-9CDB-DB35E1E46852}.Release|iPhone.Build.0 = Release|Any CPU
 		{48B59954-18CF-4C33-9DB2-4825B073B4ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{48B59954-18CF-4C33-9DB2-4825B073B4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48B59954-18CF-4C33-9DB2-4825B073B4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
