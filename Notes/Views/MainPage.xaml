@@ -33,10 +33,10 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Editor  Grid.Row="0" Grid.ColumnSpan="4" Placeholder="Title"
-                        VerticalOptions="Start"
-                        FontSize="16" FontAttributes="Bold"
-                         MaxLength="25"/>
+                <Entry  Grid.Row="0" Grid.ColumnSpan="4" Placeholder="Title"
+                         VerticalOptions="Start"
+                         FontSize="16" FontAttributes="Bold"
+                         Text="{Binding NewTitle}"/>
 
                 <Editor Grid.Row="1" Grid.ColumnSpan="4" Placeholder="Enter note..."
                         VerticalOptions="Start"
@@ -74,8 +74,8 @@
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal" Margin="0, 8, 0, 8">
                                     <Image Source="{Binding ImageSeed, StringFormat='https://picsum.photos/seed/\{0\}/280'}" VerticalOptions="Start"/>
-                                    <StackLayout>
-                                        <Label Text="{Binding Content}" FontSize="16" FontAttributes="Bold"
+                                    <StackLayout Margin="8, 0, 0, 0">
+                                        <Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold"
                                                VerticalOptions="Start"/>
                                         <Label Text="{Binding Content}" VerticalOptions="StartAndExpand" />
                                     </StackLayout>

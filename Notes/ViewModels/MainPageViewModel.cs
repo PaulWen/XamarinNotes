@@ -11,6 +11,17 @@ namespace Notes
     [AddINotifyPropertyChangedInterface]
     public class MainPageViewModel
     {
+        private string _newTitle;
+        public string NewTitle
+        {
+            get { return _newTitle; }
+            set
+            {
+                _newTitle = value;
+                AddNewNote.ChangeCanExecute();
+            }
+        }
+
         private string _newNotes;
         public string NewNote
         {
@@ -35,30 +46,33 @@ namespace Notes
             DiscardNewNote = new Command(OnDiscardNewNote);
             DeleteNote = new Command<Note>(OnDeleteNote);
 
+            NewTitle = "";
             NewNote = "";
             Notes = new ObservableCollection<Note>();
 
-            Notes.Add(new Note("Test"));
-            Notes.Add(new Note("Test1"));
-            Notes.Add(new Note("Test2"));
-            Notes.Add(new Note("Test3"));
-            Notes.Add(new Note("Test3"));
-
+            // Test data setup
+            Notes.Add(new Note("Problems in Computer Science", "There are 2 hard problems in computer science: cache invalidation, naming things, and off-by-1 errors."));
+            Notes.Add(new Note("One Identity System", "The goal should be to create one distributed identity system based on standards and open source technologies just as one internet exists today: Owned by anyone, used by everyone, and based on a self-sustainable ecosystem."));
+            Notes.Add(new Note("UI Design", "A user interface is like a joke. If you have to explain it, it's not that good."));
+            Notes.Add(new Note("Making Glass", "Basically anything that melts can be made into glass. You just have to cool off a molten material before its molecules have time to realign into what they were before being melted."));
+            Notes.Add(new Note("Honey", "Honey does not spoil. You could feasibly eat 3000 year old honey."));
         }
 
         private void OnAddNewNote()
         {
-            Notes.Add(new Note(NewNote.Trim()));
+            Notes.Insert(0, new Note(NewTitle.Trim(), NewNote.Trim()));
+            NewTitle = "";
             NewNote = "";
         }
 
         private bool HasNewNote()
         {
-            return !string.IsNullOrWhiteSpace(NewNote);
+            return !string.IsNullOrWhiteSpace(NewTitle) && !string.IsNullOrWhiteSpace(NewNote);
         }
 
         private void OnDiscardNewNote()
         {
+            NewTitle = "";
             NewNote = "";
         }
 
