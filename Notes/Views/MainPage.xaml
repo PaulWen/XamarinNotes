@@ -48,10 +48,10 @@
 
         <Label Text="All Notes" FontSize="20" FontAttributes="Bold"/>
 
-        <ListView ItemsSource="{Binding Notes}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <StackLayout x:Name="OfferList" BindableLayout.ItemsSource="{Binding Notes}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
                         <SwipeView>
                             <SwipeView.RightItems>
                                 <SwipeItems>
@@ -62,18 +62,19 @@
                                                   />
                                 </SwipeItems>
                             </SwipeView.RightItems>
-                            <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding ImageSeed, StringFormat='https://picsum.photos/seed/\{0\}/400'}" VerticalOptions="Center" Margin="0, 5, 0, 5"/>
-                                <Label Text="{Binding Content}" VerticalOptions="Center" />
+
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding ImageSeed, StringFormat='https://picsum.photos/seed/\{0\}/280'}" VerticalOptions="Center" Margin="0, 5, 0, 5"/>
+                                    <Label Text="{Binding Content}" VerticalOptions="Center" />
+                                </StackLayout>
+                                <BoxView Color="#EBEDF0" WidthRequest ="100" HeightRequest="1"/>
                             </StackLayout>
                         </SwipeView>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <ListView.Footer>
-                <Label />
-            </ListView.Footer>
-        </ListView>
-    </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
 
+    </StackLayout>
 </ContentPage>
