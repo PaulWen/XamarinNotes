@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
+using PropertyChanged;
 using Xamarin.Forms;
 
 namespace Notes
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    [AddINotifyPropertyChangedInterface]
+    public class MainPageViewModel
     {
         private string _newNotes;
         public string NewNote
@@ -21,8 +23,6 @@ namespace Notes
         }
 
         public ObservableCollection<Note> Notes { get; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public Command AddNewNote { protected set; get; }
         public Command DiscardNewNote { protected set; get; }
@@ -46,17 +46,10 @@ namespace Notes
 
         }
 
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-
         private void OnAddNewNote()
         {
             Notes.Add(new Note(NewNote.Trim()));
             NewNote = "";
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NewNote"));
         }
 
         private bool HasNewNote()
@@ -67,7 +60,6 @@ namespace Notes
         private void OnDiscardNewNote()
         {
             NewNote = "";
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NewNote"));
         }
 
         private void OnDeleteNote(Note note)
