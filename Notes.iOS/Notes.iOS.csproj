@@ -119,4 +119,9 @@
       <Name>Notes</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default2.png" />
+    <BundleResource Include="Resources\Default-568h%402x~iphone.png" />
+    <BundleResource Include="Resources\Default%402x~iphone.png" />
+  </ItemGroup>
 </Project>
