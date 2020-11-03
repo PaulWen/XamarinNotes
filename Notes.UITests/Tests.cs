@@ -26,10 +26,10 @@ namespace Notes.UITests
         }
 
         [Test]
-        public void WelcomeTextIsDisplayed()
+        public void AllNotesIsDisplayed()
         {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
-            app.Screenshot("Welcome screen.");
+            AppResult[] results = app.WaitForElement(c => c.Marked("All Notes"));
+            app.Screenshot("Main Page after Startup.");
 
             Assert.IsTrue(results.Any());
         }
