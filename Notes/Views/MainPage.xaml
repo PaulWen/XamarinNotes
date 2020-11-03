@@ -24,6 +24,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -32,14 +33,21 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Editor Grid.Row="0" Grid.ColumnSpan="4" Placeholder="Enter note here..."
+                <Editor  Grid.Row="0" Grid.ColumnSpan="4" Placeholder="Title"
+                        VerticalOptions="Start"
+                        FontSize="16" FontAttributes="Bold"
+                         MaxLength="25"/>
+
+                <Editor Grid.Row="1" Grid.ColumnSpan="4" Placeholder="Enter note..."
+                        VerticalOptions="Start"
+                        HeightRequest = "50"
                         Text="{Binding NewNote}"/>
 
-                <Button Grid.Row="1" Grid.Column="2" Text="Add"
+                <Button Grid.Row="2" Grid.Column="2" Text="Add"
                         VerticalOptions="CenterAndExpand"
                         HorizontalOptions="Center"
                         Command="{Binding AddNewNote}"/>
-                <Button Grid.Row="1" Grid.Column="3" Text="Discard"
+                <Button Grid.Row="2" Grid.Column="3" Text="Discard"
                         VerticalOptions="CenterAndExpand"
                         HorizontalOptions="Center"
                         Command="{Binding DiscardNewNote}"/>
@@ -64,9 +72,13 @@
                             </SwipeView.RightItems>
 
                             <StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding ImageSeed, StringFormat='https://picsum.photos/seed/\{0\}/280'}" VerticalOptions="Center" Margin="0, 5, 0, 5"/>
-                                    <Label Text="{Binding Content}" VerticalOptions="Center" />
+                                <StackLayout Orientation="Horizontal" Margin="0, 8, 0, 8">
+                                    <Image Source="{Binding ImageSeed, StringFormat='https://picsum.photos/seed/\{0\}/280'}" VerticalOptions="Start"/>
+                                    <StackLayout>
+                                        <Label Text="{Binding Content}" FontSize="16" FontAttributes="Bold"
+                                               VerticalOptions="Start"/>
+                                        <Label Text="{Binding Content}" VerticalOptions="StartAndExpand" />
+                                    </StackLayout>
                                 </StackLayout>
                                 <BoxView Color="#EBEDF0" WidthRequest ="100" HeightRequest="1"/>
                             </StackLayout>
