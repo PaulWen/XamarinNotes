@@ -63,7 +63,7 @@
                                 </SwipeItems>
                             </SwipeView.RightItems>
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Content, StringFormat='https://picsum.photos/seed/\{0\}/400'}" VerticalOptions="Center" Margin="0, 5, 0, 5"/>
+                                <Image Source="{Binding ImageSeed, StringFormat='https://picsum.photos/seed/\{0\}/400'}" VerticalOptions="Center" Margin="0, 5, 0, 5"/>
                                 <Label Text="{Binding Content}" VerticalOptions="Center" />
                             </StackLayout>
                         </SwipeView>
