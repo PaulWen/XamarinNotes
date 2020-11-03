@@ -19,7 +19,7 @@
     </ContentPage.Padding>
 
     <StackLayout Spacing="20">
-        <Frame Margin="0, 0, 0, 20">
+        <Frame Margin="0, 8, 0, 12">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
