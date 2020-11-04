@@ -12,7 +12,7 @@
                         <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
                         <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
                     </layoutGuides>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1443" key="view" image="Default.png">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1443" key="view" image="splash.png">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     </imageView>
                 </viewController>
@@ -22,6 +22,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Default.png" width="320" height="480"/>
+        <image name="splash.png" width="640" height="960"/>
     </resources>
 </document>
