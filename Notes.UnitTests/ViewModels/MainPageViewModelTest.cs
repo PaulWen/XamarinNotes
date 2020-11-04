@@ -18,7 +18,7 @@ namespace Notes.UnitTests.ViewModels
         [Test]
         public void AddNewNoteOnAddButtonClicked()
         {
-            ViewModel.NewNote = "New Title";
+            ViewModel.NewTitle = "New Title";
             ViewModel.NewNote = "New Note";
             int initialNumberofNotes = ViewModel.Notes.Count;
 
@@ -30,7 +30,7 @@ namespace Notes.UnitTests.ViewModels
         [Test]
         public void DiscardNewNoteOnDiscardButtonClicked()
         {
-            ViewModel.NewNote = "New Title";
+            ViewModel.NewTitle = "New Title";
             ViewModel.NewNote = "New Note";
 
             ViewModel.DiscardNewNote.Execute(null);
