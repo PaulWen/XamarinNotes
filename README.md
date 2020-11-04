@@ -17,13 +17,8 @@ This app is optimized for iOS and tested on an iPhone 12 (iOS 14.1).
 
 ## Screenshots
 
-### v0.2
-
-![v0.2 Screenshot](./v0.2.png)
-
-### v0.1
-
-![v0.1 Screenshot](./v0.1.png)
+-   [v0.2 Screenshot](./v0.2.png)
+-   [v0.1 Screenshot](./v0.1.png)
 
 ## Known Bugs
 
