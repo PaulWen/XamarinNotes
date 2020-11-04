@@ -80,7 +80,7 @@
                                         <Label Text="{Binding Content}" VerticalOptions="StartAndExpand" />
                                     </StackLayout>
                                 </StackLayout>
-                                <BoxView Color="#EBEDF0" WidthRequest ="100" HeightRequest="1"/>
+                                <BoxView Color="#EBEDF0" HeightRequest="1"/>
                             </StackLayout>
                         </SwipeView>
                     </DataTemplate>

@@ -26,10 +26,10 @@ namespace Notes.UITests
         }
 
         [Test]
-        public void AllNotesIsDisplayed()
+        public void AllNotesIsDisplayedOnStartup()
         {
             AppResult[] results = app.WaitForElement(c => c.Marked("All Notes"));
-            app.Screenshot("Main Page after Startup.");
+            app.Screenshot("MainPage after Startup.");
 
             Assert.IsTrue(results.Any());
         }

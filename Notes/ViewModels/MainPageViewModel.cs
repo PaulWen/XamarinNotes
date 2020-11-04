@@ -22,27 +22,27 @@ namespace Notes
             }
         }
 
-        private string _newNotes;
+        private string _newNote;
         public string NewNote
         {
-            get { return _newNotes; }
+            get { return _newNote; }
             set
             {
-                _newNotes = value;
+                _newNote = value;
                 AddNewNote.ChangeCanExecute();
             }
         }
 
         public ObservableCollection<Note> Notes { get; }
 
-        public Command AddNewNote { protected set; get; }
-        public Command DiscardNewNote { protected set; get; }
-        public Command<Note> DeleteNote { protected set; get; }
+        public Command AddNewNote { private set; get; }
+        public Command DiscardNewNote { private set; get; }
+        public Command<Note> DeleteNote { private set; get; }
 
 
         public MainPageViewModel()
         {
-            AddNewNote = new Command(OnAddNewNote, HasNewNote);
+            AddNewNote = new Command(OnAddNewNote, CanAddNewNote);
             DiscardNewNote = new Command(OnDiscardNewNote);
             DeleteNote = new Command<Note>(OnDeleteNote);
 
@@ -50,7 +50,7 @@ namespace Notes
             NewNote = "";
             Notes = new ObservableCollection<Note>();
 
-            // Test data setup
+            // Setup sample data
             Notes.Add(new Note("Problems in Computer Science", "There are 2 hard problems in computer science: cache invalidation, naming things, and off-by-1 errors."));
             Notes.Add(new Note("One Identity System", "The goal should be to create one distributed identity system based on standards and open source technologies just as one internet exists today: Owned by anyone, used by everyone, and based on a self-sustainable ecosystem."));
             Notes.Add(new Note("UI Design", "A user interface is like a joke. If you have to explain it, it's not that good."));
@@ -65,7 +65,7 @@ namespace Notes
             NewNote = "";
         }
 
-        private bool HasNewNote()
+        private bool CanAddNewNote()
         {
             return !string.IsNullOrWhiteSpace(NewTitle) && !string.IsNullOrWhiteSpace(NewNote);
         }
@@ -80,6 +80,5 @@ namespace Notes
         {
             Notes.Remove(note);
         }
-
     }
 }
